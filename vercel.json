@@ -27,11 +27,11 @@
     },
     {
       "src": "/api/(.*)",
-      "dest": "/api/index.php"
+      "dest": "/api/index"
     },
     {
       "src": "/(.*)",
-      "dest": "/api/index.php"
+      "dest": "/api/index"
     }
   ],
   "env": {
