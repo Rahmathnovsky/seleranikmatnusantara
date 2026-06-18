@@ -1,0 +1,173 @@
+/* Dashboard Extra Styles */
+.dash-alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+.dash-alert button { margin-left: auto; cursor: pointer; opacity: 0.6; }
+.dash-alert button:hover { opacity: 1; }
+.dash-alert-success { background: var(--success-bg); color: var(--success); border-bottom: 2px solid rgba(22,163,74,0.2); }
+.dash-alert-error   { background: var(--danger-bg); color: var(--danger); border-bottom: 2px solid rgba(220,38,38,0.2); }
+
+/* Form Styles for Dashboard */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+.input-group {
+    position: relative;
+}
+.input-group .input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+.input-group .form-control { padding-left: 40px; }
+
+/* Image Upload Preview */
+.image-upload-area {
+    border: 2px dashed var(--border);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition);
+    background: var(--bg);
+}
+.image-upload-area:hover {
+    border-color: var(--primary);
+    background: var(--primary-50);
+}
+.image-preview {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: var(--radius);
+    object-fit: cover;
+    margin: 12px auto;
+}
+
+/* Rich Text Editor */
+.editor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 8px;
+    border: 1.5px solid var(--border);
+    border-bottom: none;
+    border-radius: var(--radius) var(--radius) 0 0;
+    background: var(--bg);
+}
+.editor-toolbar button {
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    color: var(--text);
+    transition: all var(--transition);
+}
+.editor-toolbar button:hover { background: var(--primary); color: #fff; }
+.editor-content {
+    min-height: 300px;
+    border: 1.5px solid var(--border);
+    border-radius: 0 0 var(--radius) var(--radius);
+    padding: 16px;
+    outline: none;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    background: var(--surface);
+    color: var(--text);
+}
+.editor-content:focus { border-color: var(--primary); }
+
+/* Status badges inline */
+.status-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.status-dot::before {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.modal-box {
+    background: var(--surface);
+    border-radius: var(--radius-xl);
+    padding: 32px;
+    max-width: 560px;
+    width: 100%;
+    box-shadow: var(--shadow-xl);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.modal-title { font-size: 1.1rem; font-weight: 700; }
+
+/* QR Code display in dashboard */
+.qr-verify-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 28px;
+    text-align: center;
+}
+
+/* Responsive Grid Helper Classes */
+.grid-sidebar-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .grid-sidebar-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-row, .form-row-3 { grid-template-columns: 1fr; }
+    .dash-stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .grid-2-col, .grid-3-col { grid-template-columns: 1fr; gap: 15px; }
+}
